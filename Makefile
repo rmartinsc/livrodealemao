@@ -15,6 +15,9 @@ db-rollback:
 db-reset:
 	@docker-compose exec app mix ecto.reset
 
+restart:
+	@docker-compose restart app
+
 shell:
 	@docker-compose exec app /bin/sh
 
