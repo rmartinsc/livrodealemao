@@ -24,7 +24,7 @@
     <link rel="icon" type="image/png" sizes="144x144" href="/android-icon-144x144.png">
     <link rel="icon" type="image/png" sizes="192x192" href="/android-icon-192x192.png">
     <link rel="manifest" href="/manifest.json">
-    <title>Livrodealemao · Phoenix Framework</title>
+    <title>Livro de Alemão</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
