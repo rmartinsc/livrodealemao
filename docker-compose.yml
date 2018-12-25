@@ -1,0 +1,49 @@
+version: "3.7"
+services:
+  app:
+    build: .
+    image: livrodealemao/app
+    working_dir: /livrodealemao
+    tty: true
+    stdin_open: true
+    command: >
+      /bin/sh -c "
+        while ! nc -zv postgre 5432;
+        do
+          echo 'PostgreSQL not ready' && sleep 5
+        done
+        if [ ! -d /livrodealemao/assets/node_modules ]; then
+          cd assets && yarn && cd ../
+        fi
+        MIX_ENV=dev mix phx.server
+      "
+    volumes:
+      - .:/livrodealemao
+    ports:
+      - 4000:4000
+    networks:
+      - livrodealemaonet
+    depends_on:
+      - postgre
+  postgre:
+    image: postgres:11.1-alpine
+    volumes:
+      - pgsqldata:/var/lib/postgresql/data
+    ports:
+      - 5432:5432
+    networks:
+      - livrodealemaonet
+    environment:
+      POSTGRES_DB: livrodealemao
+      POSTGRES_USER: livrodealemao
+      POSTGRES_PASSWORD: password
+    entrypoint: >
+      /bin/sh -c "
+        docker-entrypoint.sh -c 'shared_buffers=256MB' -c 'work_mem=256MB'
+      "
+networks:
+  livrodealemaonet:
+    driver: "bridge"
+volumes:
+  pgsqldata:
+    driver: "local"
