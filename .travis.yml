@@ -1,13 +1,12 @@
 language: elixir
 
-dist: trusty
-sudo: true
-
 elixir: 1.7.0
 otp_release: 21.0
 
+dist: xenial
+
 env:
-  - DB_HOST=localhost DB_USER=postgres DB_PASSWORD= MIX_ENV=test
+  - CODECOV_TOKEN="dbd14b32-89c9-4468-9074-93a982b021c9" DB_HOST=localhost DB_USER=postgres DB_PASSWORD= MIX_ENV=test
 
 services:
   - postgresql
@@ -18,7 +17,10 @@ install:
   - mix deps.get
 
 script:
-  - mix test
+  - mix do compile, coveralls.json
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
 
 cache:
   directories:
