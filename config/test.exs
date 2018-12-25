@@ -11,8 +11,8 @@ config :logger, level: :warn
 
 # Configure your database
 config :livrodealemao, Livrodealemao.Repo,
-  username: "livrodealemao",
-  password: "password",
+  username: System.get_env("DB_USER") || "livrodealemao",
+  password: System.get_env("DB_PASSWORD") || "password",
   database: "livrodealemao_test",
   hostname: System.get_env("DB_HOST") || "postgre",
   pool: Ecto.Adapters.SQL.Sandbox

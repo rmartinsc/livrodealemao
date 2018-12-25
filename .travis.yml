@@ -1,0 +1,27 @@
+language: elixir
+
+dist: trusty
+sudo: true
+
+elixir: 1.7.0
+otp_release: 21.0
+
+env:
+  - DB_HOST=localhost DB_USER=postgres DB_PASSWORD= MIX_ENV=test
+
+services:
+  - postgresql
+
+install:
+  - mix local.rebar --force
+  - mix local.hex --force
+  - mix deps.get
+
+script:
+  - mix test
+
+cache:
+  directories:
+    - _build
+    - assets/node_modules
+    - deps
