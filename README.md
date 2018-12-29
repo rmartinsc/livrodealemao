@@ -29,3 +29,14 @@ Atraves de HTTPS git clone https://github.com/[SEU USUARIO]/livrodealemao.git
 Isso ira criar um diretorio na sua maquina local contendo os arquivos do projeto
 
 Pronto! A partir dai é hora de se familiarizar com o projeto e inicia-lo!
+
+2. Instalando o docker
+
+Docker é uma aplicacao de conteinerizacao de aplicacoes e ambientes. Imagine ter um outro sistema operacional separado do que voce regularmente usa, perfeitamente configurado para nosso projeto. Bem o Docker permite isso de maneira simples e mais barata que as antigas VMs.
+
+Instalar o docker é simples e requer apenas o registro no site https://www.docker.com/get-started
+
+Uma vez instalado o docker e utilizando o terminal, navegue para o diretorio raiz do seu projeto e execute: docker-compose up
+
+Tudo correndo bem, apos alguns minutos voce tera um ambiente de desenvolvimento up and running, para verificar, basta navegar para
+localhost:4000 no seu navegador.
