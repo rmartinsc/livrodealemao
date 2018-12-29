@@ -1,5 +1,8 @@
 .PHONY: test
 
+build:
+	@docker-compose build
+
 console:
 	@docker-compose exec app iex -S mix
 
@@ -17,6 +20,9 @@ db-reset:
 
 restart:
 	@docker-compose restart app
+
+run:
+	@docker-compose up
 
 shell:
 	@docker-compose exec app /bin/sh
