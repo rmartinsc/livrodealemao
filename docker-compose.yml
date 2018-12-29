@@ -12,6 +12,9 @@ services:
         do
           echo 'PostgreSQL not ready' && sleep 5
         done
+        if [ ! -d /livrodealemao/deps ]; then
+          MIX_ENV=dev mix deps.get
+        fi
         if [ ! -d /livrodealemao/assets/node_modules ]; then
           cd assets && yarn && cd ../
         fi
