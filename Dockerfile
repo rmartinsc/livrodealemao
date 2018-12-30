@@ -30,7 +30,6 @@ RUN apk add --update --no-cache inotify-tools nodejs tzdata vim yarn && \
     mix local.hex --force && \
     mix mix archive.install hex phx_new 1.4.0 --force && \
     mix local.rebar --force
-    mix deps.get --force
 
 EXPOSE 4000
 

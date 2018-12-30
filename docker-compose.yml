@@ -15,6 +15,7 @@ services:
         if [ ! -d /livrodealemao/assets/node_modules ]; then
           cd assets && yarn && cd ../
         fi
+        mix deps.get
         MIX_ENV=dev mix phx.server
       "
     volumes:
