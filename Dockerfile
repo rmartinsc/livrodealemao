@@ -28,7 +28,7 @@ RUN apk add --update --no-cache inotify-tools nodejs tzdata vim yarn && \
     echo "Europe/Berlin" > /etc/timezone && \
     apk del tzdata && \
     mix local.hex --force && \
-    mix mix archive.install hex phx_new 1.4.0 --force && \
+    mix archive.install hex phx_new 1.4.0 --force && \
     mix local.rebar --force
 
 EXPOSE 4000
