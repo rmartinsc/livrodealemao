@@ -1,0 +1,20 @@
+<form>
+  <div class="input_wrapper center_block">
+    <label>Seu nome</label>
+    <input type="text" name="nome_usuario" maxlength="250" required></input>
+  </div>
+
+  <div class="input_wrapper center_block">
+    <label>Seu email</label>
+    <input type="email" name="email_usuario" maxlength="250" required></input>
+  </div>
+
+  <div class="input_wrapper center_block">
+    <label>Sua mensagem pra gente</label>
+    <input type="textarea" name="mensagem_usuario" required></input>
+  </div>
+
+  <div class="input_wrapper center_block">
+    <input type="submit" value="Enviar" class="button"></div>
+  </div>
+</form>
