@@ -18,7 +18,7 @@ defmodule LivrodealemaoWeb.Router do
 
     get "/", PageController, :index
 
-    get "/contato", PageController, :contato
+    get "/contato", ContatoController, :contato
   end
 
   # Other scopes may use custom stacks.

@@ -1,20 +1,21 @@
-<form>
-  <div class="input_wrapper center_block">
-    <label>Seu nome</label>
-    <input type="text" name="nome_usuario" maxlength="250" required></input>
-  </div>
+<h1>Vamos conversar? Manda uma mensagem pra gente!</h1>
+  <form>
+    <div class="input_wrapper center_block">
+      <label>Seu nome</label>
+      <input type="text" name="nome_usuario" maxlength="250" required autofocus></input>
+    </div>
 
-  <div class="input_wrapper center_block">
-    <label>Seu email</label>
-    <input type="email" name="email_usuario" maxlength="250" required></input>
-  </div>
+    <div class="input_wrapper center_block">
+      <label>Seu email</label>
+      <input type="email" name="email_usuario" maxlength="250" required></input>
+    </div>
 
-  <div class="input_wrapper center_block">
-    <label>Sua mensagem pra gente</label>
-    <input type="textarea" name="mensagem_usuario" required></input>
-  </div>
+    <div class="input_wrapper center_block">
+      <label>Sua mensagem pra gente</label>
+      <textarea name="mensagem_usuario" rows="20" cols="60" required></textarea>
+    </div>
 
-  <div class="input_wrapper center_block">
-    <input type="submit" value="Enviar" class="button"></div>
-  </div>
-</form>
+    <div class="input_wrapper center_block">
+      <input type="submit" value="Enviar" class="button"></div>
+    </div>
+  </form>
