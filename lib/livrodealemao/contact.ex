@@ -2,10 +2,9 @@ defmodule Livrodealemao.Contact do
   use Ecto.Schema
   import Ecto.Changeset
 
-
+  @primary_key {:id, :binary_id, autogenerate: true}
   schema "contacts" do
     field :email, :string
-    field :id, Ecto.UUID
     field :ip, :string
     field :mensagem, :string
     field :nome, :string
