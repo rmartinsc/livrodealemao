@@ -15,7 +15,7 @@ defmodule Livrodealemao.Contact do
   @doc false
   def changeset(contact, attrs) do
     contact
-    |> cast(attrs, [:id, :nome, :email, :mensagem, :ip])
+    |> cast(attrs, [:nome, :email, :mensagem, :ip])
     |> validate_required([:id, :nome, :email, :mensagem, :ip])
     |> validate_format(:email, ~r/@/)
   end
