@@ -6,7 +6,6 @@ defmodule Livrodealemao.Contact do
   @primary_key {:id, :binary_id, autogenerate: true}
   schema "contacts" do
     field :email, :string
-    field :ip, :string
     field :mensagem, :string
     field :nome, :string
 
@@ -16,8 +15,8 @@ defmodule Livrodealemao.Contact do
   @doc false
   def changeset(%Contact{}=contact, attrs \\ %{}) do
     contact
-    |> cast(attrs, [:nome, :email, :mensagem, :ip])
-    |> validate_required([:nome, :email, :mensagem, :ip])
+    |> cast(attrs, [:nome, :email, :mensagem])
+    |> validate_required([:nome, :email, :mensagem])
     |> validate_format(:email, ~r/@/)
   end
 end
