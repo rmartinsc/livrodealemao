@@ -1,6 +1,7 @@
 defmodule Livrodealemao.Contact do
   use Ecto.Schema
   import Ecto.Changeset
+  alias Livrodealemao.Contact
 
   @primary_key {:id, :binary_id, autogenerate: true}
   schema "contacts" do
@@ -13,7 +14,7 @@ defmodule Livrodealemao.Contact do
   end
 
   @doc false
-  def changeset(contact, attrs) do
+  def changeset(%Contact{}=contact, attrs \\ %{}) do
     contact
     |> cast(attrs, [:nome, :email, :mensagem, :ip])
     |> validate_required([:nome, :email, :mensagem, :ip])

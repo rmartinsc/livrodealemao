@@ -1,8 +1,9 @@
 defmodule LivrodealemaoWeb.ContatoController do
   use LivrodealemaoWeb, :controller
   alias Livrodealemao.Contact
+  alias Livrodealemao.Repo
 
-  def contato(conn, _params) do
+  def new(conn, _params) do
   	changeset = Contact.changeset(%Contact{})
   	render(conn, "contato.html", changeset: changeset)
   end
